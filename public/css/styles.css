@@ -1,25 +1,32 @@
-body {
-    background: rgb(37, 37, 37);
-    padding: 30px;
-    text-align: center;
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    padding: 2em;
 }
 
 h1 {
-    color: rgb(201, 201, 221)
+    text-align: center;
 }
 
-h2 {
-    color:rgb(150, 150, 212); 
+.form {
+    width: 450px;
+    padding: 1em;
+    margin: 0 auto;
 }
 
-h3 {
-    color: rgb(173, 209, 209);
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
 }
 
-p {
-    color: white;
+.form-control label{
+    font-weight: bold;
+    margin-bottom: .3em;
 }
 
-a {
-    color: bisque;
+.form-control input{
+    padding: 5px;
 }

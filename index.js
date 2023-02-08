@@ -4,14 +4,18 @@ const mysql = require("mysql")
 
 const app = express()
 
-app.engine("handlebars", exphbs.engine)
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+)
+
+app.use(express.json())
+
+app.engine("handlebars", exphbs.engine())
 app.set("view engine", "handlebars")
 
 app.use(express.static("public"))
-
-app.get("/", (req, res) => {
-    res.render("home")
-})
 
 const conn = mysql.createConnection({
     host: "localhost",
@@ -20,6 +24,26 @@ const conn = mysql.createConnection({
     database: "nodemysql"
 })
 // connection created, but not executed
+
+app.get("/", (req, res) => {
+    res.render("home")
+})
+
+app.post("/books/insertbook", (req, res) => {
+    const title = req.body.title
+    const author = req.body.author
+    const pages = req.body.pages
+
+    const query = `INSERT INTO books (title, author, pages) VALUES ("${title}","${author}","${pages}")`
+
+    conn.query(query, function(err) {
+        if(err){
+            console.log(err)
+        }
+    })
+
+    res.redirect("/")
+})
 
 conn.connect(function(err) {
     if(err) {
