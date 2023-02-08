@@ -1,0 +1,25 @@
+body {
+    background: rgb(37, 37, 37);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(201, 201, 221)
+}
+
+h2 {
+    color:rgb(150, 150, 212); 
+}
+
+h3 {
+    color: rgb(173, 209, 209);
+}
+
+p {
+    color: white;
+}
+
+a {
+    color: bisque;
+}
