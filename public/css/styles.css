@@ -1,14 +1,33 @@
 * {
     font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     padding: 2em;
 }
 
+#navbar {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+#navbar ul li {
+    margin-right: 1em;
+}
+
 h1 {
     text-align: center;
-    color: rgb(7, 38, 49)
+    color: rgb(7, 38, 49);
+    margin-bottom: 1em;
 }
 
 .links {
@@ -50,4 +69,29 @@ h1 {
 
 .bold {
     font-weight: bold;
+}
+
+/* BOOK */
+.books-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.books-container div {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* BOOK */
+#book-page {
+  padding: 2em;
+}
+
+#book-page .container {
+  text-align: center;
 }

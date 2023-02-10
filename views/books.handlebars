@@ -3,7 +3,7 @@
     {{#each books}}
         <div>
             #{{this.id}} - 
-            <span class="bold">{{this.title}} - </span>
+            <a href="/books/{{this.id}}"><span class="bold">{{this.title}}</span></a> - 
             {{this.author}} -
             {{this.pages}} pages
         </div>
