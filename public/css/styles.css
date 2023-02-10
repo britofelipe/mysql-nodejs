@@ -8,9 +8,19 @@ body{
 
 h1 {
     text-align: center;
+    color: rgb(7, 38, 49)
 }
 
-.form {
+.links {
+    color: rgb(7, 38, 49);
+    text-align: center;
+    margin-top: 2em;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+.form,
+.books-container {
     width: 450px;
     padding: 1em;
     margin: 0 auto;
@@ -29,4 +39,15 @@ h1 {
 
 .form-control input{
     padding: 5px;
+}
+
+/* BOOKS */
+.books-container div {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+
+.bold {
+    font-weight: bold;
 }
