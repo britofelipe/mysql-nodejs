@@ -78,6 +78,42 @@ app.get("/books/:id", (req, res) => {
     })
 })
 
+app.get("/books/edit/:id", function (req, res) {
+    const id = req.params.id
+  
+    const query = `SELECT * FROM books WHERE id = ${id}`
+  
+    conn.query(query, function (err, data) {
+      if (err) {
+        console.log(err)
+      }
+  
+      const book = data[0]
+  
+      res.render('editbook', { book })
+    })
+})
+
+app.post("/books/updatebook", (req, res) => {
+    const id = req.body.id
+    const title = req.body.title
+    const author = req.body.author
+    const pages = req.body.pages
+
+    const sql = `UPDATE books SET title = "${title}", author = "${author}", pages = "${pages}" WHERE id = ${id}`
+
+    conn.query(sql, function(err, data) {
+        if(err) {
+            console.log(err)
+            return
+        }
+
+        const book = data[0]
+
+        res.redirect("/books")
+    })
+})
+
 conn.connect(function(err) {
     if(err) {
         console.log(err)
