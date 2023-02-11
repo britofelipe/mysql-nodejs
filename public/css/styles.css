@@ -105,4 +105,9 @@ h1 {
 
 .actions {
     margin-top: 1em;
+    display: flex;
+}
+
+.actions a{
+    margin-right: 1em;
 }
